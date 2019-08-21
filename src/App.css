@@ -31,3 +31,22 @@
     transform: rotate(360deg);
   }
 }
+
+.list {
+  margin-left: 0;
+  padding-left: 0;
+  max-width: calc(100% - 40px);
+  margin: 20px auto;
+}
+
+.item {
+  box-sizing: border-box;
+  height: 80px;
+  line-height: 80px;
+  margin-bottom: 10px;
+  border: 3px solid black;
+}
+
+.item.focused {
+  border: 3px solid red;
+}
