@@ -4,14 +4,20 @@ import './index.css';
 import App from './App';
 import Item from './Item';
 
+import ErrorNotFound from './ErrorNotFound';
+
 import * as serviceWorker from './serviceWorker';
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 ReactDOM.render(
     <Router>
-        <Route exact={true} path="/" component={App}></Route>
-        <Route path="/item/:id" component={Item}></Route>
+        <Switch>
+            <Route exact={true} path="/" component={App}></Route>
+            <Route exact={true} path="/index" component={App}></Route>
+            <Route exact={true} path="/item/:id" component={Item}></Route>
+            <Route path='*' component={ErrorNotFound}></Route>
+        </Switch>
     </Router>, 
 document.getElementById('root'));
 
